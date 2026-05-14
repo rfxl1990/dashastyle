@@ -44,28 +44,16 @@
           <p class="hero__guarantee">If your friends don't notice, you don't pay. Simple.</p>
         </div>
         <div class="hero__image">
-          <div class="split" id="split">
-            <!-- Right layer (After) – base -->
-            <div class="split__layer split__layer--right">
-              <img src="images/after.jpeg" alt="After: styled and confident">
-              <span class="split__label split__label--after">After</span>
+          <div class="compare" id="compare">
+            <img class="compare__img compare__img--before" src="images/before.jpeg" alt="Before">
+            <img class="compare__img compare__img--after" id="compare-after" src="images/after.jpeg" alt="After">
+            <div class="compare__slider" id="compare-slider">
+              <div class="compare__handle">
+                <div class="compare__handle-dot"></div>
+              </div>
             </div>
-            <!-- Left layer (Before) – clipped -->
-            <div class="split__layer split__layer--left" id="split-left">
-              <img src="images/before.jpeg" alt="Before: no style direction">
-              <span class="split__label split__label--before">Before</span>
-            </div>
-            <!-- Divider line -->
-            <svg class="split__divider" id="split-divider" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <defs>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="1.2" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-              <line class="split__line split__line--glow" x1="60" y1="0" x2="35" y2="100" filter="url(#glow)"/>
-              <line class="split__line split__line--core" x1="60" y1="0" x2="35" y2="100"/>
-            </svg>
+            <span class="compare__label compare__label--before">Before</span>
+            <span class="compare__label compare__label--after">After</span>
           </div>
         </div>
       </div>

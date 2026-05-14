@@ -49,76 +49,60 @@ if (revealElements.length > 0) {
   revealElements.forEach(el => revealObserver.observe(el));
 }
 
-// ── Diagonal Split: hover + animated divider line ──
-const split = document.getElementById('split');
-const splitLeft = document.getElementById('split-left');
-const divider = document.getElementById('split-divider');
+// ── Image Comparison Slider ──
+const compare = document.getElementById('compare');
+const afterImg = document.getElementById('compare-after');
+const slider = document.getElementById('compare-slider');
 
-if (split) {
-  // Default line positions (percent)
-  const DEFAULT = { topX: 60, botX: 35 };
-  const HOVER_LEFT = { topX: 95, botX: 80 };
-  const HOVER_RIGHT = { topX: 25, botX: 5 };
-
-  let current = { topX: DEFAULT.topX, botX: DEFAULT.botX };
-  let target = { ...current };
+if (compare && afterImg && slider) {
+  let pos = 50; // current animated position
+  let targetPos = 50; // target position
   let raf;
 
-  function updateDivider() {
-    const glowLine = divider.querySelector('.split__line--glow');
-    const coreLine = divider.querySelector('.split__line--core');
-    if (glowLine) {
-      glowLine.setAttribute('x1', current.topX);
-      glowLine.setAttribute('x2', current.botX);
-    }
-    if (coreLine) {
-      coreLine.setAttribute('x1', current.topX);
-      coreLine.setAttribute('x2', current.botX);
-    }
+  function updateSlider() {
+    afterImg.style.clipPath = `inset(0 0 0 ${pos}%)`;
+    slider.style.left = pos + '%';
   }
 
   function animate() {
-    const ease = 0.04;
-    current.topX += (target.topX - current.topX) * ease;
-    current.botX += (target.botX - current.botX) * ease;
+    pos += (targetPos - pos) * 0.12;
 
-    const topX = current.topX;
-    const botX = current.botX;
-    splitLeft.style.clipPath =
-      `polygon(0% 0%, ${topX}% 0%, ${botX}% 100%, 0% 100%)`;
+    if (Math.abs(targetPos - pos) < 0.1) {
+      pos = targetPos;
+    }
 
-    updateDivider();
+    updateSlider();
 
-    // Keep animating until we're very close
-    if (Math.abs(target.topX - current.topX) > 0.01 ||
-        Math.abs(target.botX - current.botX) > 0.01) {
+    if (Math.abs(targetPos - pos) > 0.05) {
       raf = requestAnimationFrame(animate);
     }
   }
 
-  function startAnimate(t) {
-    target = t;
+  function setTarget(p) {
+    targetPos = p;
     cancelAnimationFrame(raf);
     raf = requestAnimationFrame(animate);
   }
 
-  split.addEventListener('mousemove', (e) => {
-    const rect = split.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
+  function getPosition(e) {
+    const rect = compare.getBoundingClientRect();
+    const x = 'touches' in e
+      ? e.touches[0].clientX - rect.left
+      : e.clientX - rect.left;
+    return Math.min(Math.max((x / rect.width) * 100, 0), 100);
+  }
 
-    if (x < 0.45) {
-      startAnimate(HOVER_LEFT);
-      split.classList.add('hover-left');
-      split.classList.remove('hover-right');
-    } else {
-      startAnimate(HOVER_RIGHT);
-      split.classList.add('hover-right');
-      split.classList.remove('hover-left');
-    }
-  });
+  // Hover mode: follows mouse
+  compare.addEventListener('mousemove', (e) => setTarget(getPosition(e)));
+  compare.addEventListener('mouseleave', () => setTarget(50));
 
-  split.addEventListener('mouseleave', () => {
-    startAnimate(DEFAULT);
-    split.classList.remove('hover-left', 'hover-right');
-  });
+  // Touch support
+  compare.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    setTarget(getPosition(e));
+  }, { passive: false });
+  compare.addEventListener('touchend', () => setTarget(50));
+
+  // Initial render
+  updateSlider();
 }
