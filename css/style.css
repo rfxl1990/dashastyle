@@ -810,3 +810,142 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   FAQ Section
+   ============================================ */
+
+.faq {
+  text-align: center;
+}
+
+.faq h2 {
+  margin-bottom: 3rem;
+}
+
+.faq__list {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq__question {
+  padding: 1.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color var(--transition);
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-accent);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq__item[open] .faq__question::after {
+  content: '−';
+}
+
+.faq__question:hover {
+  color: var(--color-accent);
+}
+
+.faq__answer {
+  padding-bottom: 1.5rem;
+}
+
+.faq__answer p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: 4rem 0 2rem;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer__brand p {
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.footer__links h4 {
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.footer__links ul {
+  list-style: none;
+}
+
+.footer__links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__links a {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--color-accent);
+}
+
+.footer__bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer__bottom p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+@media (max-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
