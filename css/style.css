@@ -949,3 +949,82 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   Tipps Page
+   ============================================ */
+
+.tipps-hero {
+  padding: calc(72px + 4rem) 0 4rem;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.tipps-hero h1 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 1rem;
+}
+
+.tipps-hero__subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+}
+
+.tipps-section {
+  padding: var(--section-padding);
+}
+
+.tipps-section__intro {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+.tipps-section__intro strong {
+  color: var(--color-text);
+}
+
+.tipps__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+
+.tipp-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color var(--transition);
+}
+
+.tipp-card:hover {
+  border-color: var(--color-accent);
+}
+
+.tipp-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.tipp-card p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.tipps-cta {
+  text-align: center;
+  padding: var(--section-padding);
+  background: var(--color-bg-elevated);
+}
+
+.tipps-cta p {
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
