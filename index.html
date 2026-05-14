@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Styling-Beratung für Männer – Ich mache aus deinem fragwürdigen Kleidungsgeschmack einen Look, der sitzt. Komplett-Styling oder Sprechstunde buchen.">
-  <title>DashaStyle – Dein Style-Upgrade</title>
+  <meta name="description" content="Personal styling for men – I'll help you find a look that actually fits you. Book a full styling or a quick consultation.">
+  <title>DashaStyle – Your Style Upgrade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Italianno&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,16 +15,16 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav__inner container">
-      <a href="#" class="nav__logo">Dascha<span>Style</span></a>
-      <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen">
+      <a href="#" class="nav__logo">dasha<span>STYLING</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#problem">Warum ich?</a></li>
-        <li><a href="#about">Über mich</a></li>
-        <li><a href="#angebote">Angebote</a></li>
-        <li><a href="#galerie">Ergebnisse</a></li>
-        <li><a href="#buchung" class="btn btn-primary btn--nav">Termin buchen</a></li>
+        <li><a href="#problem">Why me</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#angebote">Services</a></li>
+        <li><a href="#galerie">Results</a></li>
+        <li><a href="#buchung" class="btn btn-primary btn--nav">Book now</a></li>
       </ul>
     </div>
   </nav>
@@ -34,21 +34,38 @@
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero__content">
-          <p class="hero__tagline">Styling-Beratung für Männer</p>
-          <h1 class="hero__title">Ich weiß, dass du keine Ahnung hast.<br><span>Genau dafür bin ich da.</span></h1>
-          <p class="hero__subtitle">Ich bin Dascha – und ich mache aus deinem fragwürdigen Kleidungsgeschmack einen Look, für den du Komplimente bekommst.</p>
+          <p class="hero__tagline">Personal styling for men</p>
+          <h1 class="hero__title">Looking good is no coincidence.<br><span class="sig">It's a decision.</span></h1>
+          <p class="hero__subtitle">Your ex will hate it. Everyone else will love it.</p>
           <div class="hero__ctas">
-            <a href="#buchung" class="btn btn-primary">Termin buchen</a>
-            <a href="#angebote" class="btn btn-outline">Was ich anbiete</a>
+            <a href="#buchung" class="btn btn-primary">Book a session &rarr;</a>
+            <a href="#angebote" class="btn btn-outline">View services</a>
           </div>
+          <p class="hero__guarantee">If your friends don't notice, you don't pay. Simple.</p>
         </div>
         <div class="hero__image">
-          <div class="hero__before-after">
-            <img src="images/hero-before-after.webp" alt="Vorher-Nachher Transformation: Von planlos zu stylisch" onerror="this.src='images/placeholder.svg'">
-            <div class="hero__labels">
-              <span class="hero__label hero__label--before">Vorher</span>
-              <span class="hero__label hero__label--after">Nachher</span>
+          <div class="split" id="split">
+            <!-- Right layer (After) – base -->
+            <div class="split__layer split__layer--right">
+              <img src="images/after.jpeg" alt="After: styled and confident">
+              <span class="split__label split__label--after">After</span>
             </div>
+            <!-- Left layer (Before) – clipped -->
+            <div class="split__layer split__layer--left" id="split-left">
+              <img src="images/before.jpeg" alt="Before: no style direction">
+              <span class="split__label split__label--before">Before</span>
+            </div>
+            <!-- Divider line -->
+            <svg class="split__divider" id="split-divider" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="1.2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <line class="split__line split__line--glow" x1="60" y1="0" x2="35" y2="100" filter="url(#glow)"/>
+              <line class="split__line split__line--core" x1="60" y1="0" x2="35" y2="100"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -57,118 +74,143 @@
     <!-- Problem -->
     <section class="problem" id="problem">
       <div class="container">
-        <h2>Kommt dir das bekannt vor?</h2>
+        <h2 class="reveal">Sound familiar?</h2>
         <div class="problem__grid">
-          <div class="problem__card">
+          <div class="problem__card reveal reveal-delay-1">
             <span class="problem__icon">👕</span>
-            <h3>Der Schrank ist voll, aber nichts passt zusammen</h3>
-            <p>Du kaufst Klamotten nach Gefühl – und das Gefühl hat dich bisher nicht gut beraten.</p>
+            <h3>Your closet is full, but nothing goes together</h3>
+            <p>You buy clothes on impulse – and that impulse hasn't been kind to you so far.</p>
           </div>
-          <div class="problem__card">
+          <div class="problem__card reveal reveal-delay-2">
             <span class="problem__icon">🤷</span>
-            <h3>"Zieh dich mal ordentlich an"</h3>
-            <p>Deine Freundin, deine Mutter, dein Spiegelbild – alle sagen es dir. Aber niemand sagt dir wie.</p>
+            <h3>"You should dress better"</h3>
+            <p>Your girlfriend, your mom, your mirror – they all tell you. But nobody tells you how.</p>
           </div>
-          <div class="problem__card">
+          <div class="problem__card reveal reveal-delay-3">
             <span class="problem__icon">🛒</span>
-            <h3>Online shoppen ist ein Albtraum</h3>
-            <p>Du scrollst durch 500 Jacken und weißt bei keiner, ob sie zu dir passt. Am Ende kaufst du wieder ein schwarzes T-Shirt.</p>
+            <h3>Online shopping is a nightmare</h3>
+            <p>You scroll through 500 jackets and don't know if any of them suit you. You end up buying another black t-shirt.</p>
           </div>
         </div>
-        <p class="problem__closer">Keine Sorge – <strong>genau dafür gibt es mich.</strong></p>
+        <p class="problem__closer">Don't worry – <strong>that's exactly what I'm here for.</strong></p>
       </div>
     </section>
 
-    <!-- Über Dascha -->
+    <!-- About Dascha -->
     <section class="about" id="about">
       <div class="container">
-        <div class="about__grid">
+        <div class="about__grid reveal">
           <div class="about__image">
-            <img src="images/dascha.webp" alt="Dascha – Deine Styling-Beraterin" onerror="this.src='images/placeholder.svg'">
+            <img src="images/dascha.webp" alt="Dascha – Your personal styling consultant" onerror="this.src='images/placeholder.svg'">
           </div>
           <div class="about__content">
-            <h2>Hey, ich bin Dascha.</h2>
-            <p>Ich helfe Männern, die beim Thema Klamotten überfordert sind – und das ohne Modezeitschriften-Gelaber oder Luxus-Attitüde.</p>
-            <p>Ich sage dir ehrlich, was geht und was nicht. Kein Bullshit, kein Drumherumreden. Dafür ein Style, der zu <strong>dir</strong> passt – nicht zu irgendeinem Instagram-Model.</p>
-            <p>Ob Komplett-Transformation oder schnelle Tipps – nach unserer Session weißt du, was du kaufen sollst, was du wegwerfen kannst und warum du nie wieder Cargo-Shorts tragen wirst.</p>
-            <a href="#buchung" class="btn btn-primary">Lass uns loslegen</a>
+            <h2>Hey, I'm Dascha.</h2>
+            <p>I help men who feel overwhelmed when it comes to clothes – without the fashion magazine jargon or luxury attitude.</p>
+            <p>I'll tell you honestly what works and what doesn't. No BS, no beating around the bush. Just a style that fits <strong>you</strong> – not some Instagram model.</p>
+            <p>Whether it's a full transformation or quick tips – after our session, you'll know what to buy, what to toss, and why you'll never wear cargo shorts again.</p>
+            <a href="#buchung" class="btn btn-primary">Let's get started</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Angebote -->
+    <!-- The Reaction -->
+    <section class="reaction" id="reaction">
+      <div class="container">
+        <div class="reaction__inner reveal">
+          <p class="reaction__eyebrow">The effect</p>
+          <h2 class="reaction__title">Walk into the room and <em>own it.</em></h2>
+          <p class="reaction__text">The right outfit doesn't just change how you look – it changes how you carry yourself. More confidence. More presence. The kind of energy people notice before you even say a word.</p>
+          <div class="reaction__stats">
+            <div class="reaction__stat">
+              <span class="reaction__number">100%</span>
+              <span class="reaction__label">of my clients say they feel more confident</span>
+            </div>
+            <div class="reaction__stat">
+              <span class="reaction__number">2hrs</span>
+              <span class="reaction__label">is all it takes to transform your wardrobe</span>
+            </div>
+            <div class="reaction__stat">
+              <span class="reaction__number">0</span>
+              <span class="reaction__label">cargo shorts after our session</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
     <section class="pricing" id="angebote">
       <div class="container">
-        <h2>Was ich für dich tun kann</h2>
-        <p class="pricing__subtitle">Zwei Wege zu deinem neuen Style – such dir aus, was passt.</p>
+        <h2>What I can do for you</h2>
+        <p class="pricing__subtitle">Two paths to your new style – pick the one that fits.</p>
         <div class="pricing__grid">
 
-          <div class="pricing__card">
+          <div class="pricing__card reveal reveal-delay-1">
             <div class="pricing__header">
-              <h3>Sprechstunde</h3>
-              <p class="pricing__tagline">Für den schnellen Style-Check</p>
+              <h3>Consultation</h3>
+              <p class="pricing__tagline">The quick style check</p>
             </div>
             <div class="pricing__price">
-              <span class="pricing__amount">70€</span>
+              <span class="pricing__amount">€70</span>
             </div>
             <ul class="pricing__features">
-              <li>60 Minuten 1:1 Beratung</li>
-              <li>Analyse deines aktuellen Styles</li>
-              <li>Konkrete Tipps was zu dir passt</li>
-              <li>Shopping-Empfehlungen zum Mitnehmen</li>
+              <li>60-minute 1:1 session</li>
+              <li>Analysis of your current style</li>
+              <li>Specific tips tailored to you</li>
+              <li>Shopping recommendations to take home</li>
             </ul>
-            <a href="#buchung" class="btn btn-outline">Sprechstunde buchen</a>
+            <a href="#buchung" class="btn btn-outline">Book consultation</a>
           </div>
 
-          <div class="pricing__card pricing__card--featured">
-            <div class="pricing__badge">Beliebteste Wahl</div>
+          <div class="pricing__card pricing__card--featured reveal reveal-delay-2">
+            <div class="pricing__badge">Most popular</div>
             <div class="pricing__header">
-              <h3>Komplett-Styling</h3>
-              <p class="pricing__tagline">Die volle Transformation</p>
+              <h3>Full Styling</h3>
+              <p class="pricing__tagline">The complete transformation</p>
             </div>
             <div class="pricing__price">
-              <span class="pricing__amount">400€</span>
+              <span class="pricing__amount">€400</span>
             </div>
             <ul class="pricing__features">
-              <li>Kleiderschrank-Audit – was bleibt, was geht</li>
-              <li>Persönlicher Style-Guide für dich</li>
-              <li>Gemeinsame Shopping-Tour</li>
-              <li>3 komplette Outfits zusammengestellt</li>
-              <li>Nachbetreuung per WhatsApp (2 Wochen)</li>
+              <li>Wardrobe audit – what stays, what goes</li>
+              <li>Personal style guide just for you</li>
+              <li>Shopping trip together</li>
+              <li>3 complete outfits put together</li>
+              <li>WhatsApp follow-up support (2 weeks)</li>
             </ul>
-            <a href="#buchung" class="btn btn-primary">Komplett-Styling buchen</a>
+            <a href="#buchung" class="btn btn-primary">Book full styling</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Vorher/Nachher Galerie -->
+    <!-- Before/After Gallery -->
     <section class="gallery" id="galerie">
       <div class="container">
-        <h2>Die Ergebnisse sprechen für sich</h2>
-        <p class="gallery__subtitle">Echte Transformationen. Echte Männer. Null Filter.</p>
+        <h2>The results speak for themselves</h2>
+        <p class="gallery__subtitle">Real transformations. Real men. Zero filters.</p>
         <div class="gallery__grid">
           <div class="gallery__item">
             <img src="images/placeholder.svg" alt="Transformation 1">
             <div class="gallery__labels">
-              <span class="gallery__label gallery__label--before">Vorher</span>
-              <span class="gallery__label gallery__label--after">Nachher</span>
+              <span class="gallery__label gallery__label--before">Before</span>
+              <span class="gallery__label gallery__label--after">After</span>
             </div>
           </div>
           <div class="gallery__item">
             <img src="images/placeholder.svg" alt="Transformation 2">
             <div class="gallery__labels">
-              <span class="gallery__label gallery__label--before">Vorher</span>
-              <span class="gallery__label gallery__label--after">Nachher</span>
+              <span class="gallery__label gallery__label--before">Before</span>
+              <span class="gallery__label gallery__label--after">After</span>
             </div>
           </div>
           <div class="gallery__item">
             <img src="images/placeholder.svg" alt="Transformation 3">
             <div class="gallery__labels">
-              <span class="gallery__label gallery__label--before">Vorher</span>
-              <span class="gallery__label gallery__label--after">Nachher</span>
+              <span class="gallery__label gallery__label--before">Before</span>
+              <span class="gallery__label gallery__label--after">After</span>
             </div>
           </div>
         </div>
@@ -178,54 +220,53 @@
     <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
       <div class="container">
-        <h2>Was meine Kunden sagen</h2>
+        <h2>What my clients say</h2>
         <div class="testimonials__grid">
           <blockquote class="testimonial">
-            <p class="testimonial__text">"Ich hab mich noch nie so gut angezogen gefühlt. Dascha hat mir in 2 Stunden mehr beigebracht als 30 Jahre Selbstversuche."</p>
+            <p class="testimonial__text">"I've never felt this good about getting dressed. Dascha taught me more in 2 hours than 30 years of guessing."</p>
             <footer class="testimonial__author">
               <strong>Markus, 32</strong>
-              <span>Komplett-Styling</span>
+              <span>Full Styling</span>
             </footer>
           </blockquote>
           <blockquote class="testimonial">
-            <p class="testimonial__text">"Endlich weiß ich, was zusammenpasst. Die Shopping-Tipps waren Gold wert – ich hab direkt 3 Outfits bestellt."</p>
+            <p class="testimonial__text">"Finally I know what goes together. The shopping tips were gold – I ordered 3 complete outfits right away."</p>
             <footer class="testimonial__author">
               <strong>Tim, 28</strong>
-              <span>Sprechstunde</span>
+              <span>Consultation</span>
             </footer>
           </blockquote>
           <blockquote class="testimonial">
-            <p class="testimonial__text">"Meine Freundin hat mich gefragt, ob ich einen neuen Job habe. Nee, nur einen neuen Style. Danke Dascha!"</p>
+            <p class="testimonial__text">"My girlfriend asked if I got a new job. Nope, just a new style. Thanks Dascha!"</p>
             <footer class="testimonial__author">
               <strong>Jan, 35</strong>
-              <span>Komplett-Styling</span>
+              <span>Full Styling</span>
             </footer>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- Buchung -->
+    <!-- Booking -->
     <section class="booking" id="buchung">
       <div class="container">
-        <h2>Bereit für dein Style-Upgrade?</h2>
-        <p class="booking__subtitle">Such dir einen Termin aus – oder schreib mir direkt auf WhatsApp, wenn du erstmal quatschen willst.</p>
+        <h2>Ready for your style upgrade?</h2>
+        <p class="booking__subtitle">Pick a time that works – or message me on WhatsApp if you want to chat first.</p>
         <div class="booking__grid">
           <div class="booking__calendar">
-            <!-- Cal.com Widget – ersetze DEIN_CALCOM_LINK mit dem echten Link -->
             <div class="booking__placeholder" id="cal-embed">
-              <p>Hier kommt der Cal.com Kalender hin.</p>
-              <p class="booking__setup-hint">Ersetze diesen Bereich mit dem Cal.com Embed-Code:<br>
+              <p>Cal.com calendar goes here.</p>
+              <p class="booking__setup-hint">Replace this area with the Cal.com embed code:<br>
               <code>&lt;cal-inline calLink="dascha/styling"&gt;&lt;/cal-inline&gt;</code></p>
             </div>
           </div>
           <div class="booking__whatsapp">
             <div class="booking__whatsapp-card">
-              <h3>Lieber erstmal schreiben?</h3>
-              <p>Kein Problem – schreib mir auf WhatsApp. Ich antworte meistens innerhalb von ein paar Stunden.</p>
-              <a href="https://wa.me/49XXXXXXXXXXX?text=Hey%20Dascha%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Styling-Beratung!" class="btn btn-whatsapp" target="_blank" rel="noopener">
+              <h3>Prefer to text first?</h3>
+              <p>No problem – reach out on WhatsApp. I usually respond within a few hours.</p>
+              <a href="https://wa.me/49XXXXXXXXXXX?text=Hey%20Dascha%2C%20I'm%20interested%20in%20a%20styling%20consultation!" class="btn btn-whatsapp" target="_blank" rel="noopener">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                WhatsApp öffnen
+                Open WhatsApp
               </a>
             </div>
           </div>
@@ -236,41 +277,41 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="container">
-        <h2>Häufige Fragen</h2>
+        <h2>Frequently asked questions</h2>
         <div class="faq__list">
 
           <details class="faq__item">
-            <summary class="faq__question">Was passiert beim Komplett-Styling?</summary>
+            <summary class="faq__question">What happens during a full styling?</summary>
             <div class="faq__answer">
-              <p>Ich komme zu dir nach Hause, wir gehen zusammen deinen Kleiderschrank durch und sortieren aus, was nicht mehr geht. Dann erstelle ich einen persönlichen Style-Guide für dich und wir gehen zusammen shoppen. Am Ende hast du mindestens 3 komplette Outfits und weißt genau, was du in Zukunft kaufen sollst.</p>
+              <p>I come to your place, we go through your wardrobe together and sort out what no longer works. Then I create a personal style guide for you and we go shopping together. By the end, you'll have at least 3 complete outfits and know exactly what to buy in the future.</p>
             </div>
           </details>
 
           <details class="faq__item">
-            <summary class="faq__question">Was ist der Unterschied zur Sprechstunde?</summary>
+            <summary class="faq__question">What's the difference with the consultation?</summary>
             <div class="faq__answer">
-              <p>Die Sprechstunde ist eine 60-minütige Beratung – online oder vor Ort. Ich analysiere deinen aktuellen Style, gebe dir konkrete Tipps und eine Shopping-Liste. Perfekt, wenn du einen Startpunkt brauchst, aber noch nicht bereit für die volle Transformation bist.</p>
+              <p>The consultation is a 60-minute session – online or in person. I analyze your current style, give you specific tips, and a shopping list. Perfect if you need a starting point but aren't ready for the full transformation yet.</p>
             </div>
           </details>
 
           <details class="faq__item">
-            <summary class="faq__question">Muss ich etwas vorbereiten?</summary>
+            <summary class="faq__question">Do I need to prepare anything?</summary>
             <div class="faq__answer">
-              <p>Nö. Komm einfach so wie du bist – das ist ja der Punkt. Wenn du magst, kannst du vorher ein paar Fotos von Outfits sammeln, die dir gefallen. Aber das ist kein Muss.</p>
+              <p>Nope. Just show up as you are – that's kind of the point. If you want, you can save a few photos of outfits you like beforehand. But it's not required.</p>
             </div>
           </details>
 
           <details class="faq__item">
-            <summary class="faq__question">Ist das Ganze auch was für Männer, die gar keine Ahnung haben?</summary>
+            <summary class="faq__question">Is this for men who have zero fashion sense?</summary>
             <div class="faq__answer">
-              <p>Gerade für die! Je weniger du weißt, desto mehr kann ich dir helfen. Die meisten meiner Kunden starten bei Null – und genau das macht die Transformation so krass.</p>
+              <p>Especially for them! The less you know, the more I can help. Most of my clients start from scratch – and that's what makes the transformation so impressive.</p>
             </div>
           </details>
 
           <details class="faq__item">
-            <summary class="faq__question">Wo finden die Termine statt?</summary>
+            <summary class="faq__question">Where do the sessions take place?</summary>
             <div class="faq__answer">
-              <p>Die Sprechstunde geht auch online per Video-Call. Das Komplett-Styling findet bei dir vor Ort statt – inklusive gemeinsamer Shopping-Tour in deiner Stadt.</p>
+              <p>Consultations also work online via video call. The full styling takes place at your home – including a shopping trip together in your city.</p>
             </div>
           </details>
 
@@ -284,28 +325,28 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#" class="nav__logo">Dascha<span>Style</span></a>
-          <p>Styling-Beratung für Männer, die endlich gut aussehen wollen.</p>
+          <a href="#" class="nav__logo">dasha<span>STYLING</span></a>
+          <p>Personal styling for men who are ready to look their best.</p>
         </div>
         <div class="footer__links">
-          <h4>Navigation</h4>
+          <h4>Navigate</h4>
           <ul>
-            <li><a href="#problem">Warum ich?</a></li>
-            <li><a href="#about">Über mich</a></li>
-            <li><a href="#angebote">Angebote</a></li>
-            <li><a href="#buchung">Termin buchen</a></li>
+            <li><a href="#problem">Why me</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#angebote">Services</a></li>
+            <li><a href="#buchung">Book now</a></li>
           </ul>
         </div>
         <div class="footer__links">
-          <h4>Mehr</h4>
+          <h4>More</h4>
           <ul>
-            <li><a href="tipps.html">Styling-Tipps</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="tipps.html">Style tips</a></li>
+            <li><a href="impressum.html">Imprint</a></li>
+            <li><a href="datenschutz.html">Privacy</a></li>
           </ul>
         </div>
         <div class="footer__links">
-          <h4>Social Media</h4>
+          <h4>Social</h4>
           <ul>
             <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
@@ -313,7 +354,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 DashaStyle. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2026 DashaStyle. All rights reserved.</p>
       </div>
     </div>
   </footer>
